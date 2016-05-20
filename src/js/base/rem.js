@@ -14,6 +14,11 @@
     var scale = 1;// css 像素缩放比率
     var maxRem = 62;
     var tid = null;
+
+    //是否对rem进行处理(在html上设置font-size),默认设置true
+    var isRem = docEl.getAttribute('data-rem') || 'true';
+    isRem = (isRem == '1' || isRem === 'true') ? true : false;
+
     // 初始化数据
     var designWidth = docEl.getAttribute('data-design') || 750; // psd设计稿宽度
     if (win.devicePixelRatio >= 3) {
@@ -55,7 +60,9 @@
         tid = setTimeout(setRem, 300);
     }, false);
 
-    setRem(); //设置rem字体
+    if (isRem) {
+        setRem(); //设置rem字体
+    }
 
     svp.setRem = setRem;
     svp.setViewport=setViewport;
