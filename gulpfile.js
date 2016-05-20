@@ -324,6 +324,7 @@ gulp.task('baseLib', function() {
             opts.src + '/js/base/affix.js',
             opts.src + '/js/base/cover.js',
             opts.src + '/js/base/parallax.js',
+            opts.src + '/js/base/dropload.js',
             opts.src + '/js/base/weixin.js',
             opts.src + '/js/base/codec.js',
             opts.src + '/js/base/qrcode.js',
